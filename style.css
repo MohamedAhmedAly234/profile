@@ -1,0 +1,125 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+nav{
+    background-color: aqua;
+    padding: 1rem;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {
+    display: inline;
+
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 , 5rem , 1rem;
+    display: block;
+}
+#textPheader {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+#h1Header {
+    color: cyan;
+    text-align: center;
+    padding-top: 10px;
+}
+#textSection {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#backgroundColor {
+    background-color: blue;
+    margin-left: 220px;
+    margin-right: 220px;
+    padding-top: 10px;
+}
+#textAbout {
+    color: cyan;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+#pAbout{
+    color: white;
+}
+#backgroundColor2{
+    background-color: blue;
+    margin-left: 120px;
+    margin-right: 120px;
+     margin-top: 10px;
+}
+#padding {
+    margin-top: 10px;
+}
+#margin{
+margin-bottom: 10px;
+}
+#skils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+}
+#skils div {
+    height: 375px;
+    width: 330px;
+    background-color: cyan;
+    margin: 60px;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 20px;
+    background-color: cyan;
+}
+h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+#backgroundSkils {
+    background-color: blue;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
+
+}
+#textProjects{
+    text-align: left;
+}
+#button {
+    background-color: cyan;
+    margin-top: 50px;
+}
+#form {
+background-color: blue;
+width: 1000px;
+height: 250px;
+margin-left: 120px;
+margin-top: 15px;
+}
+#footer{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    margin-top: 75px;
+}
+#button2{
+    width: 300px;
+    background-color: cyan;
+}
+#shadow {
+    text-shadow: 1px , 2px 5px rgba(0, 0, 0, 60%);
+}
