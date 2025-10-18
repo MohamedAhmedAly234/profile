@@ -31,7 +31,7 @@ cursor {
     animation: pulse 1.5s infinite;
   }
   .textSize {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
   @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
@@ -60,6 +60,16 @@ nav {
 .hero h1 {
 font-size: 2.8rem;
 font-weight: bold;
+}
+#trainerContainer {
+  transition: opacity 0.5s ease;
+  background-color: #000000; 
+}
+#trainerContainer.fade-out {
+  opacity: 0;
+}
+#trainerContainer.fade-in {
+  opacity: 1;
 }
 button,
 .btn {

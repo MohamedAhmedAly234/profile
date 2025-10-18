@@ -1,3 +1,46 @@
+ const trainers = [
+    { name: "Captain Ahmed Salah", experience: "10 Years of Experience", clients: 250, success: 180 },
+    { name: "Coach Sara Youssef", experience: "7 Years of Experience", clients: 190, success: 150 },
+    { name: "Captain Mohamed Tarek", experience: "12 Years of Experience", clients: 320, success: 270 },
+    { name: "Coach Nour Adel", experience: "8 Years of Experience", clients: 210, success: 160 },
+    { name: "Captain Omar Khaled", experience: "6 Years of Experience", clients: 170, success: 130 }
+  ];
+
+  let currentTrainer = 0;
+
+  const trainerContainer = document.getElementById("trainerContainer");
+  const trainerName = document.getElementById("trainerName");
+  const trainerExperience = document.getElementById("trainerExperience");
+  const trainerClients = document.getElementById("trainerClients");
+  const trainerSuccess = document.getElementById("trainerSuccess");
+
+  function showTrainer(index) {
+    const t = trainers[index];
+    trainerName.textContent = t.name;
+    trainerExperience.textContent = t.experience;
+    trainerClients.textContent = t.clients;
+    trainerSuccess.textContent = t.success;
+  }
+
+  function cycleTrainers() {
+    trainerContainer.classList.remove("fade-in");
+    trainerContainer.classList.add("fade-out");
+
+    setTimeout(() => {
+      currentTrainer = (currentTrainer + 1) % trainers.length;
+      showTrainer(currentTrainer);
+      trainerContainer.classList.remove("fade-out");
+      trainerContainer.classList.add("fade-in");
+    }, 500);
+  }
+
+  // عرض أول مدرب
+  showTrainer(currentTrainer);
+
+  // التبديل كل 10 ثوانٍ
+  setInterval(cycleTrainers, 10000);
+
+
 // ==========================
 // PLAN DATA (Updated Types)
 // ==========================
