@@ -1,4 +1,3 @@
-
 // ==========================
 // PLAN DATA (Updated Types)
 // ==========================
@@ -16,14 +15,18 @@ const plans = [
   { title: "Advanced Physiotherapy Plan", price: "EGP/1500 / month", description: "Covers personalized recovery programs and 2 weekly sessions." },
   { title: "Premium Physiotherapy Plan", price: "EGP/2000 / month", description: "Full rehabilitation support with unlimited sessions." },
 ];
+
+// Sort by price ascending
 plans.sort((a, b) => {
   const priceA = parseFloat(a.price.replace(/[^0-9.]/g, ''));
   const priceB = parseFloat(b.price.replace(/[^0-9.]/g, ''));
   return priceA - priceB;
 });
+
 let currentIndex = 0;
 const planContainer = document.getElementById("planContainer");
 const plansPerView = 3;
+
 // Render Function
 function renderPlans() {
   planContainer.innerHTML = "";
@@ -36,11 +39,11 @@ function renderPlans() {
     col.className = "col-md-4";
 
     col.innerHTML = `
-       <div id="transition" class="p-4 bg-green rounded shadow h-100 d-flex flex-column">
+      <div id="transition" class="p-4 bg-green rounded shadow h-100 d-flex flex-column">
         <h2 class="fw-bold mb-2">${plan.title}</h2>
-        <h4 class="text-primary mb-3">${plan.price}</h4>
+        <h4 class="pricePlan mb-3">${plan.price}</h4>
         <p class="text-muted flex-grow-1">${plan.description}</p>
-        <a href="#checkout"<button class="btn btn-primary mt-3">Join Now</button><a/>
+       <a href="plans.html?id=${planIndex}" class="btn btn-primary mt-3">Join Now</a>
       </div>
     `;
     planContainer.appendChild(col);
