@@ -18,30 +18,18 @@
     </div>
   </div>
 </section>
-
-<!-- Customers Review Section -->
+ <!-- Clients section -->
 <section id="testimonials" class="py-5">
   <div class="container text-center">
-    <h2 class="mb-5">What Our Clients Say</h2>
-
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active mb-4">
-          <div class="p-4 bg-white rounded shadow mx-auto" style="max-width: 700px;">
-            <i class="bi bi-chat-quote fs-1 text-primary mb-3"></i>
-            <p class="fst-italic mb-3">
-              “Amazing gym! I joined the weight loss program and saw real results in just 2 months. The trainers are super supportive!”
-            </p>
-            <div class="text-warning mb-2">
-              ★★★★★
-            </div>
-            <h5 class="mb-0">Ahmed Youssef</h5>
-            <small class="text-muted">VIP Personal Program</small>
+    <h2 class="mb-4 fw-bold">What Our Clients Say</h2>
+    <div id="testimonialContainer" class="p-4 bg-white rounded shadow mx-auto" style="max-width: 700px;">
+      <p id="testimonialMessage" class="fs-5 fst-italic">"Great gym! I saw amazing results in just 2 months."</p>
+      <h5 id="testimonialName" class="mt-3 fw-bold">– Ahmed Youssef</h5>
+      <p id="testimonialProgram" class="text-muted mb-0">Weight Loss Program</p>
     </div>
   </div>
 </section>
+
 
 <!-- Add Review Form 
  <section>
@@ -143,5 +131,66 @@
 
 <script src="plans.js"></script>
 <script src="script.js"></script>
+<script>
+    // test reviews
+   const testimonials = [
+    {
+      message: "Great gym! I saw amazing results in just 2 months.",
+      name: "Ahmed Youssef",
+      program: "Weight Loss Program"
+    },
+    {
+      message: "The trainers are super supportive and motivating. I love it here!",
+      name: "Sarah Ali",
+      program: "Ladies Program"
+    },
+    {
+      message: "Best physiotherapy service I've tried. My recovery was fast and smooth.",
+      name: "Mohamed Hassan",
+      program: "Advanced Physiotherapy Plan"
+    },
+    {
+      message: "The environment is clean and the equipment is top-notch!",
+      name: "Omar Ibrahim",
+      program: "Muscle Building Program"
+    },
+    {
+      message: "Amazing experience! The annual plan saved me a lot of money.",
+      name: "Mona Adel",
+      program: "Annual All-Inclusive"
+    }
+  ];
+
+  let currentTestimonial = 0;
+  const container = document.getElementById("testimonialContainer");
+  const messageEl = document.getElementById("testimonialMessage");
+  const nameEl = document.getElementById("testimonialName");
+  const programEl = document.getElementById("testimonialProgram");
+
+  function showTestimonial(index) {
+    const t = testimonials[index];
+    messageEl.textContent = `"${t.message}"`;
+    nameEl.textContent = `– ${t.name}`;
+    programEl.textContent = t.program;
+  }
+
+  function cycleTestimonials() {
+    container.classList.remove("fade-in");
+    container.classList.add("fade-out");
+
+    setTimeout(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+      container.classList.remove("fade-out");
+      container.classList.add("fade-in");
+    }, 500);
+  }
+
+  // أول رأي
+  showTestimonial(currentTestimonial);
+
+  // تغيير تلقائي كل 15 ثانية
+  setInterval(cycleTestimonials, 7000);
+</script>
 </body>
 </html>
